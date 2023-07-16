@@ -44,3 +44,10 @@ docker container inspect <id/name> | grep IPAdress <some_detail>
 
 docker container inspect 9d25c52fb687 | Select-String -Pattern 'IPAddress'
 
+docker exec -it <id/name> <process: bash/sh..> - запуск доп процесса
+
+Посмотрим страницу
+
+cd /usr/share/nginx/html
+
+cat index.html
