@@ -67,7 +67,17 @@ docker run \
   --name my-nginx \
   -v ${PWD}:/usr/share/nginx/html \
   -p 8888:80 \
-  -- rm \
+  -d \
+  --rm \
   nginx
 
+В PowerShell для переноса строки можно использовать символ обратного апострофа "`" вместо "\"
+
+docker run `
+   --name my-nginx `
+   -v ${PWD}:/usr/share/nginx/html `
+   -p 8888:80 `
+   -d `
+   --rm `
+   nginx
 
