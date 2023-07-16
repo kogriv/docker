@@ -51,3 +51,23 @@ docker exec -it <id/name> <process: bash/sh..> - запуск доп проце�
 cd /usr/share/nginx/html
 
 cat index.html
+
+docker run -d --name <name> <image_name> - создание контейнера с именем
+
+docker run (-d) -p 8080:80 nginx - мэппинг портов -p publish
+
+0.0.0.0:8080->80/tcp - можно вводить люой IP (lockalhost, 127.0.0.1)
+
+docker run -v ${PWD}:/usr/share/nginx/html -p 8080:80 -d nginx - мэппинг томов -v. ${PWD} - переменная для пути к локальной папке
+
+docker run -it --rm busybox - автоматическое удаление контейнера опцией --rm
+
+Пример с переносом строк:
+docker run \
+  --name my-nginx \
+  -v ${PWD}:/usr/share/nginx/html \
+  -p 8888:80 \
+  -- rm \
+  nginx
+
+
