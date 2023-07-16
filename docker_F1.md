@@ -26,6 +26,8 @@ docker ps -q - только идентификаторы контейнеров
 
 docker stop $(docker ps -q) - остановка всех запущенных контейнеров
 
+docker stop <id/name>
+
 docker container prune удаление всех остановленных контейнеров
 
 ### для nginx
