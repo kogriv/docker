@@ -81,3 +81,12 @@ docker run `
    --rm `
    nginx
 
+docker rmi <имя_образа>:<тег> - Для удаления образа Docker с вашего компьютера
+
+docker login
+
+docker rmi <имя_репозитория>/<имя_образа>:<тег>
+
+docker search <имя_пользователя_в_Docker_Hub> - Для просмотра образов в вашем репозитории на Docker Hub
+
+docker run --rm -d -p 8010:8000 --name ocr ocr_5_model:1.0
