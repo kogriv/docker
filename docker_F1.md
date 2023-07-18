@@ -85,8 +85,23 @@ docker rmi <имя_образа>:<тег> - Для удаления образа
 
 docker login
 
-docker rmi <имя_репозитория>/<имя_образа>:<тег>
+docker rmi <имя_репозитория>/<имя_образа>:<тег> - удаление в репозитории
 
 docker search <имя_пользователя_в_Docker_Hub> - Для просмотра образов в вашем репозитории на Docker Hub
 
+docker build -t stable_image:1.0 -f path/to/Dockerfile.stable .
+
+docker build -t final_image:1.0 -f path/to/Dockerfile.final --build-arg имя_стабильного_образа=stable_image:1.0 .
+
+docker build -t ocr_5_base:1.0 -f Dockerfile.stable .
+
+docker build -t ocr_5_model:1.0 -f Dockerfile.final .
+
 docker run --rm -d -p 8010:8000 --name ocr ocr_5_model:1.0
+
+docker stop ocr
+docker rm ocr
+docker rmi ocr_5_model:1.0
+docker run --rm -d -p 8010:8000 --name ocr ocr_5_model:1.0
+docker run -d -p 8010:8000 --name ocr ocr_5_model:1.0
+docker logs ocr
