@@ -102,6 +102,7 @@ docker run --rm -d -p 8010:8000 --name ocr ocr_5_model:1.0
 docker stop ocr
 docker rm ocr
 docker rmi ocr_5_model:1.0
+docker build -t ocr_5_model:1.0 -f Dockerfile.final .
 docker run --rm -d -p 8010:8000 --name ocr ocr_5_model:1.0
 docker run -d -p 8010:8000 --name ocr ocr_5_model:1.0
 docker logs ocr
